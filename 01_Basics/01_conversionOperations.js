@@ -63,3 +63,20 @@ let age = 23
 let age1 = String(age)
 console.log(age1) //output:23
 console.log(typeof(age1)) //output:string
+
+//*****************************************Operations********************************************//
+ console.log(2+2)
+ console.log(2-2)
+ console.log(2*2)
+ console.log(2/2)
+ console.log(2%2)
+ console.log(2**2)
+
+ let str1 = "Hema"
+ let str2 = " Hulagur"
+ let str3 = str1 + str2
+ console.log(str3)
+
+ console.log("1" + 2) //output:12
+ console.log(2 + 2 + "3") //output:43-->such cases shows the coder is creating such messy codes plz avoid such codes
+ console.log(typeof(2 + "2")) //output:string
