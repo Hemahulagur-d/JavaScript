@@ -1,0 +1,96 @@
+In JavaScript, data types are also divided into primitive and non-primitive (reference) types.
+
+>> Primitive Data Types
+
+> JavaScript has 7 primitive data types:
+
+string
+number
+bigint
+boolean
+undefined
+symbol
+null
+
+> Examples:
+
+let name = "Alice";      // string
+let age = 25;            // number
+let isStudent = true;    // boolean
+let score;               // undefined
+let empty = null;        // null
+let id = Symbol("id");   // symbol
+let bigNum = 123n;       // bigint
+
+> Characteristics:
+Store a single value.
+Immutable (their values cannot be changed directly).
+Compared by value(Pass By Value)
+
+> Example:
+
+let a = 10;
+let b = a;
+
+b = 20;
+
+console.log(a); // 10
+console.log(b); // 20
+
+Changing b does not affect a.
+
+>> Non-Primitive (Reference) Data Types
+
+Everything else in JavaScript is essentially an object.
+
+> Examples:
+
+Object
+Array
+Function
+Date
+Map
+Set
+
+-> let person = {
+  name: "Alice",
+  age: 25
+};
+
+-> let colors = ["red", "green", "blue"];
+
+-> function greet() {
+  console.log("Hello");
+}
+
+> Characteristics
+Store collections of data.
+Mutable (can be modified).
+Compared by reference.
+
+> Example:
+
+let obj1 = { name: "John" };
+let obj2 = obj1;
+
+obj2.name = "Jane";
+
+console.log(obj1.name); // Jane
+console.log(obj2.name); // Jane
+
+Both variables point to the same object in memory.
+
+>> Primitive vs Non-Primitive in JavaScript
+Primitive	                                                   Non-Primitive
+string, number, boolean, null, undefined, symbol, bigint	   object, array, function, date, map, set, etc.
+Stored by value	                                             Stored by reference
+Immutable	                                                   Mutable
+Compared by value	                                           Compared by reference
+
+>> Example of comparison:
+
+console.log(10 === 10); // true
+
+console.log({} === {}); // false
+
+The objects are different references, so they are not equal even though they look the same.
