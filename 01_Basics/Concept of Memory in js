@@ -1,0 +1,122 @@
+>> Memory in JavaScript
+
+JavaScript uses memory to store variables, objects, functions, and data while your program runs. The JavaScript engine manages memory automatically through allocation, usage, and garbage collection.
+
+1. Memory Allocation
+When you create variables, JavaScript allocates memory for them.
+
+let name = "Rahul";
+let age = 25;
+let user = {
+  city: "Bangalore"
+};
+"Rahul" and 25 are primitive values.
+{ city: "Bangalore" } is an object.
+
+2. Stack Memory
+The stack is used for:
+-> Primitive values
+-> Function calls (execution contexts)
+-> References to objects
+
+Example:
+let a = 10;
+let b = a;
+Stack
+-----
+a = 10
+b = 10
+
+When b changes, a is unaffected because primitives are copied by value.
+
+3. Heap Memory
+The heap stores:
+
+Objects
+Arrays
+Functions
+
+Example:
+let user1 = {
+  name: "Rahul"
+};
+
+let user2 = user1;
+
+Stack
+-----
+user1 ---> Address A
+user2 ---> Address A
+
+Heap
+----
+Address A:
+{ name: "Rahul" }
+
+Both variables point to the same object.
+
+4. Function Memory (Call Stack)
+Every function call gets its own stack frame.
+
+function greet() {
+  let message = "Hello";
+  console.log(message);
+}
+
+greet();
+
+Execution:
+
+Call Stack
+----------
+greet()
+Global
+
+After greet() finishes, its memory is removed from the stack.
+
+5. Garbage Collection
+JavaScript automatically removes unused memory.
+
+let person = {
+  name: "Rahul"
+};
+
+person = null;
+
+The object is no longer reachable, so it becomes eligible for garbage collection.
+
+>> Memory Lifecycle
+1. Allocate Memory
+       ↓
+2. Use Memory
+       ↓
+3. Release Memory (Garbage Collection)
+
+Example:
+let arr = [1, 2, 3]; // allocate
+
+console.log(arr[0]); // use
+
+arr = null;          // eligible for cleanup
+
+>> Quick Interview Answer
+
+>> How memory works in JavaScript?
+
+JavaScript stores primitive values in stack memory.
+Objects, arrays, and functions are stored in heap memory.
+Variables that reference objects store the object's memory address.
+Function calls are managed using the call stack.
+Unused memory is automatically cleaned by the garbage collector.
+
+Example
+let x = 10;               // Stack
+
+let obj = { value: 10 };  // Reference in Stack, Object in Heap
+Stack                    Heap
+-----                    ----
+x = 10
+
+obj -----> Address1 ---> { value: 10 }
+
+This stack-vs-heap model is the most commonly expected explanation in JavaScript interviews.
